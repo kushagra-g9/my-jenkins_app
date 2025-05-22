@@ -58,6 +58,19 @@ pipeline {
         }
     }
 
+    stage('Verify Deployment') {
+    steps {
+        withCredentials([file(credentialsId: "${KUBECONFIG_CREDENTIAL_ID}", variable: 'KUBECONFIG_FILE')]) {
+            sh '''
+                export KUBECONFIG=$KUBECONFIG_FILE
+                kubectl rollout status deployment/my-node-app
+                kubectl get svc
+            '''
+        }
+    }
+}
+
+
     post {
         success {
             echo "✅ Deployment successful!"
