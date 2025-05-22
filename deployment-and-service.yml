@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: kushagrag99/my-app:latest
+          image: <IMAGE>
           ports:
             - containerPort: 3000
         
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-my-nodedb-app
+  name: my-node-service
 spec:
   selector:
-    app: nodedb-app
+    app: node-app
   ports:
     - name: http
       port: 8080
