@@ -28,7 +28,7 @@ pipeline {
         stage('Push to DockerHub') {
     steps {
         script {
-            // Make sure IMAGE_TAG is available here
+           
             echo "Pushing image: ${DOCKER_IMAGE}:${IMAGE_TAG}"
         }
         withCredentials([usernamePassword(credentialsId: "${REGISTRY_CREDENTIALS}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
