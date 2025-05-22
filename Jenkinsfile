@@ -37,6 +37,11 @@ pipeline {
         }
     }
 }
+        stage('Check kubectl') {
+          steps {
+               sh 'which kubectl && kubectl version --client'
+    }
+}
 
 
         stage('Deploy to Kubernetes') {
