@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: kushagrag99/my-app:01
+          image: kushagrag99/my-app:latest
           ports:
             - containerPort: 3000
         
