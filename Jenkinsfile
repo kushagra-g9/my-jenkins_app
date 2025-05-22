@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/kushagra-g9/my-jenkins_app.git'
+                 git branch: 'main', url: 'https://github.com/kushagra-g9/my-jenkins_app.git'
             }
         }
 
