@@ -56,7 +56,7 @@ pipeline {
                 }
             }
         }
-    }
+    
 
     stage('Verify Deployment') {
     steps {
@@ -69,6 +69,7 @@ pipeline {
         }
     }
 }
+    }
 
 
     post {
