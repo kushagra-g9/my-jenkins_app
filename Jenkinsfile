@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "kushagrag99/my-app"
+        DOCKER_IMAGE = "kushagrag99/my-app:v1"
         REGISTRY_CREDENTIALS = 'docker-cred'       // Jenkins credential ID for DockerHub
         KUBECONFIG_CREDENTIAL_ID = 'kubeconfig-jenkins' // Jenkins credential ID for kubeconfig
     }
