@@ -5,6 +5,7 @@ pipeline {
         DOCKER_IMAGE = "kushagrag99/my-app"
         REGISTRY_CREDENTIALS = 'docker-cred'       // Jenkins credential ID for DockerHub
         KUBECONFIG_CREDENTIAL_ID = 'kubeconfig-jenkins' // Jenkins credential ID for kubeconfig
+        PATH = "${env.PATH}:/usr/local/bin"
     }
 
     stages {
