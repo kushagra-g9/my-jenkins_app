@@ -44,7 +44,7 @@ pipeline {
                 withCredentials([file(credentialsId: "${KUBECONFIG_CREDENTIAL_ID}", variable: 'KUBECONFIG_FILE')]) {
                     sh '''
                         export KUBECONFIG=$KUBECONFIG_FILE
-                        sed "s|<IMAGE>|${DOCKER_IMAGE}:${IMAGE_TAG}|g" my-jenkins_app/deployment-and-service.yml | kubectl apply -f -
+                        sed "s|<IMAGE>|${DOCKER_IMAGE}:${IMAGE_TAG}|g" deployment-and-service.yml | kubectl apply -f -
                     '''
                 }
             }
